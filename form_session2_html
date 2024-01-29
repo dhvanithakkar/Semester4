@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h2>Feedback Form</h2>
+    <form>
+        <fieldset>
+            <legend>Student Details</legend>
+
+            <label for="fname">First Name: </label>
+            <input type="text" name="fname" id="Fname"><br>
+
+            <label for="lname">Last Name: </label>
+            <input type="text" name="lname" id="Lname"><br>
+
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="Email"><br>
+
+            <label for="phoneno">Contact Info: </label>
+            <input type="number" name="phoneno" id="PhoneNo"><br>
+
+            <label for="sapid">SAP ID: </label>
+            <input type="number" name="sapid" id="SAPID"><br>
+
+            <label for="bday">Birth Date: </label>
+            <input type="date" name="bday" id="Bday", value="bday"> <br>  
+
+            <label for="year">Year: </label>
+            <input type="radio" name="year" id="FY" value="FY" checked>
+            <label for="FY">FY</label>
+            <input type="radio" name="year" id="SY" value="SY">
+            <label for="SY">SY</label>
+            <input type="radio" name="year" id="TY" value="TY">
+            <label for="TY">TY</label>
+            <input type="radio" name="year" id="BTech" value="BTech">
+            <label for="BTech">BTech</label>
+            <br>
+
+            <label for="dept">Department: </label>
+            <select name="dept" id="Dept">
+                <option value="Computer">Computer</option>
+                <option value="IT">IT</option>
+                <option value="CSDS">CSDS</option>
+                <option value="EXTC">EXTC</option>
+                <option value="Iot">IoT</option>
+                <option value="Chemical">Chemical</option>
+            </select>
+            <br>
+
+            <label for="modes">Modes of Lecture Conduction: </label>
+            <input type="checkbox" name="modes" id="Online" value="Online">
+            <label for="Online">Online</label>
+            <input type="checkbox" name="modes" id="Offline" value="Offline">
+            <label for="Offline">Offline</label>
+            <br>
+            
+        </fieldset><br>
+        <fieldset>
+            <legend>Content</legend>
+            <label for="interesting">Was the content interesting? </label>
+            <input type="range" name="interesting" id="Interesting" value=50 step="10"><br>
+            
+            <label for="understandable">Was the content understandable? </label>
+            <input type="range" name="understandable" id="Understandable" value=50 step="10"><br>
+            
+            <label for="clarity">Was there clarity in the content? </label>
+            <input type="range" name="clarity" id="Clarity" value=50 step="10"><br>
+        </fieldset><br>
+        <fieldset>
+            <legend>Structure</legend>
+
+            <label for="focus">How was the focus of the lecture? </label>
+            <input type="radio" name="focus" id="f1" value=1>
+            <label for="f1">1</label>
+            <input type="radio" name="focus" id="f2" value=2>
+            <label for="f2">2</label>
+            <input type="radio" name="focus" id="f3" value=3 checked>
+            <label for="f3">3</label>
+            <input type="radio" name="focus" id="f4" value=4>
+            <label for="f4">4</label>
+            <input type="radio" name="focus" id="f5" value=5>
+            <label for="f5">5</label>
+            <br>
+
+            <label for="use">Was the lecture useful? </label>
+            <input type="radio" name="use" id="u1" value=1>
+            <label for="u1">1</label>
+            <input type="radio" name="use" id="u2" value=2>
+            <label for="u2">2</label>
+            <input type="radio" name="use" id="u3" value=3 checked>
+            <label for="u3">3</label>
+            <input type="radio" name="use" id="u4" value=4>
+            <label for="u4">4</label>
+            <input type="radio" name="use" id="u5" value=5>
+            <label for="u5">5</label>
+            <br>
+
+            <label for="exp">Did the lecture meet your expectations? </label>
+            <input type="radio" name="exp" id="e1" value=1>
+            <label for="e1">1</label>
+            <input type="radio" name="exp" id="e2" value=2>
+            <label for="e2">2</label>
+            <input type="radio" name="exp" id="e3" value=3 checked>
+            <label for="e3">3</label>
+            <input type="radio" name="exp" id="e4" value=4>
+            <label for="e4">4</label>
+            <input type="radio" name="exp" id="e5" value=5>
+            <label for="e5">5</label>
+            <br>
+        </fieldset><br>
+        <fieldset>
+            <legend>Overall</legend>
+        
+            <label for="satisf">Were you satisfied with the lecture? </label>
+            <input type="radio" name="satisf" id="sy" value="Yes" checked>
+            <label for="sy">Yes</label>
+            <input type="radio" name="satisf" id="sn" value="No">
+            <label for="sn">No</label>
+            <br>
+
+            <label for="impr">What is your overall impression of the lecture? </label>
+            <input type="radio" name="impr" id="ig" value="Good">
+            <label for="ig">Good</label>
+            <input type="radio" name="impr" id="ia" value="Average" checked>
+            <label for="ia">Average</label>
+            <input type="radio" name="impr" id="ib" value="Bad">
+            <label for="ib">Bad</label>
+            <br>
+        </fieldset>
+        <br>
+        <input type="reset" value="Reset">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
