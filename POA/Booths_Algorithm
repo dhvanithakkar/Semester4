@@ -1,12 +1,17 @@
 
-def right_shift(ans, q, qi):
-    combined = ans + q + [qi]
-    combined = [combined[0]] + combined[:-1]
+def right_shift(ac, q, qi):
+    q_last = q[-1]
+    qi = q_last
+    q = q[:-1]
 
-    ans = combined[:len(ans)]
-    q = combined[len(ans): len(ans) + len(q)]
-    qi = combined[-1]
-    return ans, q, qi
+    repeated = [ac[0]]
+    ac = repeated + ac
+
+    ac_last = ac[-1]
+    q = [ac_last] + q
+    ac = ac[:-1]
+
+    return ac, q, qi
 # print(right_shift([1,0,0,0], [1, 0, 0, 0], 1))
 
 def add(a, b, carry = 0):
@@ -54,14 +59,63 @@ def booths_algo(m, q):
 
         sc -= 1
         ac, q, qi = right_shift(ac, q, qi) 
-
     return ac + q
 
+def binaryToDecimal(binary) -> int:
+    if binary[0] == 1:
+        neg = True
+    else:
+        neg = False
+
+    binary = binary[1:]
+    decimal = 0
+    for dig in range(len(binary)):
+        print(binary[dig] * 2**(len(binary)-1-dig))
+        decimal += binary[dig] * 2**(len(binary)-1-dig)
+    
+    return decimal
+
+print(binaryToDecimal([1, 0, 0, 0]))
+
+def decimalToBinary(num: int):
+    neg = False
+    if num < 0:
+        neg = True
+        num = -num
+
+    binary = []
+    rem = 0
+
+    while num != 0:
+        rem = num % 2
+        num = num // 2
+        binary = [rem] + binary
+
+    if neg:
+        return [1] + add(complement(binary), [0] * len(binary), 1)
+    
+    return [0] + binary
+
+print(decimalToBinary(7))
 
 # bool1, bool2 = [1, 0, 0, 1], [0, 0, 1, 1]
 
-bool1 = list(map(lambda x: int(x), list(input("Multiplicand: "))))
-bool2 = list(map(lambda x: int(x), list(input("Multiplier: "))))
-mul = booths_algo(bool1, bool2)
-print(mul)
+# bool1 = list(map(lambda x: int(x), list(input("Multiplicand: "))))
+# bool2 = list(map(lambda x: int(x), list(input("Multiplier: "))))
+
+
+# num1 = int(input("Multiplicand: "))
+# num2 = int(input("Multiplier: "))
+
+# bool1 = decimalToBinary(num1)
+# bool2 = decimalToBinary(num2)
+
+# print("Boolean 1: ", bool1)
+# print("Boolean 2: ", bool2)
+
+# mul = booths_algo(bool1, bool2)
+
+# print("Result:")
+# print("Boolean: ", "".join(mul))
+# print("Integer: ", binaryToDecimal(mul))
 
