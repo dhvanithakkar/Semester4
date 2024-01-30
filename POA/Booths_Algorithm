@@ -2,10 +2,12 @@
 def right_shift(ans, q, qi):
     combined = ans + q + [qi]
     combined = [combined[0]] + combined[:-1]
+
     ans = combined[:len(ans)]
     q = combined[len(ans): len(ans) + len(q)]
     qi = combined[-1]
     return ans, q, qi
+# print(right_shift([1,0,0,0], [1, 0, 0, 0], 1))
 
 def add(a, b, carry = 0):
     ans = [0] * len(a)
@@ -40,23 +42,26 @@ def complement(a):
 def booths_algo(m, q):
     sc = len(m)
     qi = 0
-    ans = [0] * sc
-    if (q[-1] == 0 and qi == 0) or (q[-1] == 1 and qi == 1):
+    ac = [0] * sc
+    m_2comp = add(complement(m), ac, 1)
+
+    while sc > 0:
+        if q[-1] == 0 and qi == 1:
+            ac = add(ac, m)
+
+        elif q[-1] == 1 and qi == 0:
+            ac = add(ac, m_2comp)
+
         sc -= 1
-        ans, q, qi = right_shift(ans, q, qi) 
+        ac, q, qi = right_shift(ac, q, qi) 
 
-    elif q[-1] == 0 and qi == 1:
-        ans = add(ans, m)
-        ans, q, qi = right_shift(ans, q, qi)
+    return ac + q
 
-    else:
-        ans = add(ans, m, 1)
-        ans, q, qi = right_shift(ans, q, qi)
-        
-    return ans + q + [qi]
 
-bool1, bool2 = [0, 1, 1, 0], [0, 0, 1, 0]
+# bool1, bool2 = [1, 0, 0, 1], [0, 0, 1, 1]
+
+bool1 = list(map(lambda x: int(x), list(input("Multiplicand: "))))
+bool2 = list(map(lambda x: int(x), list(input("Multiplier: "))))
 mul = booths_algo(bool1, bool2)
 print(mul)
 
-# print(right_shift([1,0,0,0], [1, 0, 0, 0], 1))
