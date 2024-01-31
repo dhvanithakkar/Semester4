@@ -1,0 +1,51 @@
+:root{
+    --sz:300px;
+    --div-p: 30px;
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* justify-content: center; */
+img
+{
+    height: var(--sz);
+}
+.quote
+{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: var(--sz);
+    font-size: larger;
+    padding: var(--div-p);
+}
+.biography
+{
+    padding: var(--div-p);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+h1
+{
+    font-size: 2.5em;
+}
+.title
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 25px;
+}
