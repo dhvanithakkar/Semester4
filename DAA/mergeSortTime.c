@@ -1,9 +1,8 @@
-// C program for Merge Sort 
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <time.h> 
 
-int arr[1050];
+int arr[10000];
 
 void merge(int l, int m, int r) 
 { 
@@ -66,13 +65,12 @@ void printArray(int A[], int size)
 	printf("\n"); 
 } 
 
-// Driver code 
 int main() 
 { 
     int time;
     clock_t start, end;
     
-    for(int i=0; i<1000; i++)
+    for(int i=0; i<10000; i++)
     {
         long int no = rand();
         arr[i] = no;
@@ -93,4 +91,4 @@ int main()
 	printf("\nTime is: %d", time);
 	return 0; 
 }
- // APPROX 110- 210 in online programiz compiler
+// 1200 - 1600: ts10000
