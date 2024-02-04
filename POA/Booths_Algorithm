@@ -81,50 +81,50 @@ def binaryToDecimal(binary):
 
 # print(binaryToDecimal([1, 0, 0, 0]))
 
-# def decimalToBinary(num, max_l = 4):
-#     neg = False
-#     if num < 0:
-#         neg = True
-#         num = -num
+def decimalToBinary(num, max_l = 4):
+    neg = False
+    if num < 0:
+        neg = True
+        num = -num
 
-#     binary = []
-#     rem = 0
+    binary = []
+    rem = 0
 
-#     while num != 0:
-#         rem = num % 2
-#         num = num // 2
-#         binary = [rem] + binary
+    while num != 0:
+        rem = num % 2
+        num = num // 2
+        binary = [rem] + binary
     
-#     # while max_l - 1 < len(binary) :
-#     #     max_l *= 2-
+    # while max_l - 1 < len(binary) :
+    #     max_l *= 2-
     
-#     if max_l - 1 > len(binary):
-#         more_zer = max_l - len(binary)
-#         binary = [0] * more_zer + binary
+    if max_l > len(binary):
+        more_zer = max_l - len(binary)
+        binary = [0] * more_zer + binary
 
-#     if neg:
-#         return [1] + add(complement(binary), [0] * len(binary), 1)
+    if neg:
+        return twos_complement(binary)
     
-#     return [0] + binary
+    return binary
 
-# print(decimalToBinary(7))
+# print(decimalToBinary(-13, 5))
 
 # bool1, bool2 = [1, 0, 0, 1], [0, 0, 1, 1]
 
-bool1 = list(map(lambda x: int(x), list(input("Multiplicand: "))))
-bool2 = list(map(lambda x: int(x), list(input("Multiplier: "))))
-
-
-# num1 = int(input("Multiplicand: "))
-# num2 = int(input("Multiplier: "))
+# bool1 = list(map(lambda x: int(x), list(input("Multiplicand: "))))
+# bool2 = list(map(lambda x: int(x), list(input("Multiplier: "))))
+n = 4
+num1 = int(input("Multiplicand: "))
+num2 = int(input("Multiplier: "))
+n = int(input("Number of digits(including signed bit): "))
 
 # print(num1, num2)
 
-# bool1 = decimalToBinary(num1)
-# bool2 = decimalToBinary(num2)
+bool1 = decimalToBinary(num1, n)
+bool2 = decimalToBinary(num2, n)
 
-# print("Boolean 1: ", bool1)
-# print("Boolean 2: ", bool2)
+print("Boolean Multiplicand: ", bool1)
+print("Boolean Multiplier: ", bool2)
 
 print("Integer Multiplicand: ", binaryToDecimal(bool1))
 print("Integer Multiplier: ", binaryToDecimal(bool2))
