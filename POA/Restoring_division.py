@@ -10,7 +10,7 @@ def left_shift(a, q):
     return a, q
 # print(left_shift([1,0,0,1], [1, 0, 0, 1]))
 
-# Adds two binary numbers a and b, both in list(int), with the same length. 
+# Adds two binary numbers a and b, both in list(int), with the same length. Ignores carry if generated in the end.
 # Initial carry is 0 by default but can be given as 1 if needed.
 def add(a, b, carry = 0):
     ans = [0] * len(a)
@@ -117,18 +117,19 @@ def decimalToBinary(num, max_l = 4):
 # n = 4
 
 # Driver code taking the inputs and printing the output.
+# Inputs must be positive integers and Number of bits for the binary conversion must be able to accomodate the dividend and divisor.
 dividend = int(input("Dividend: "))
 divisor = int(input("Divisor: "))
-n = int(input("Number of digits: "))
+n = int(input("Maximum number of bits: "))
 
 bool_q = decimalToBinary(dividend, n)
-bool_m = decimalToBinary(divisor, n+1)
+bool_m = decimalToBinary(divisor, n+1) # Length of divisor binary = length of dividend binary + 1
 
-print("Boolean Multiplicand: ", bool_q)
-print("Boolean Multiplier: ", bool_m)
+print("Boolean Dividend: ", bool_q)
+print("Boolean Divisor: ", bool_m)
 
-print("Integer Dividend: ", binaryToDecimal(bool_q))
-print("Integer Divisor: ", binaryToDecimal(bool_m))
+# print("Integer Dividend: ", binaryToDecimal(bool_q))
+# print("Integer Divisor: ", binaryToDecimal(bool_m))
 
 quo, rem = restoring_division(bool_q, bool_m)
 
