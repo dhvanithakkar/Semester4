@@ -1,0 +1,9 @@
+In the printout:
+Code, output screenshots
+(For booth's algorithm, take both positive, one positive one negative, both negative inputs)
+
+In handwritten writeup:
+Aim
+Theory
+Flowchart
+Conclusion
