@@ -1,0 +1,4 @@
+Tribute page
+Info from wikipedia
+Links to different pages about Hans Rosling
+HTML, Minimal formatting
