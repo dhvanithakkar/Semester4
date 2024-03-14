@@ -44,7 +44,26 @@ void main()
     printf("\nAverage turnaround time = %f\n", TaT);
     printf("Average waiting time = %f\n", WaT);
     printf("Average completion time = %f\n", CoT);
+
+    printf("Gantt Chart: ");
+    int current_time = 0;
+    for (int i = 0; i < n; i++)
+    {
+        // Print idle time if needed
+        if (current_time < p[i].arrivalTime)
+        {
+            printf("Idle(%d)", p[i].arrivalTime – current_time);
+            current_time = p[i].arrivalTime;
+        }
+
+        // Print process execution
+        printf(" P%d(%d) ", p[i].pid, p[i].completionTime);
+        current_time += p[i].burstTime;
+    }
+
+    printf("\n");
 }
+
 void sort(struct process *p, int n){
     for(int i = 0; i < n - 1; i++)
     {
