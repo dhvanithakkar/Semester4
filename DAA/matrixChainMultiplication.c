@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 int main ()
 {
     int n;
@@ -44,17 +45,24 @@ int main ()
     	for(int i=0; i<n-a; i++)
     	{
     	    int j = i+a;
-    	    int min = 9999999;
-    	    for(int k = i; k<j; k++)
+    	    
+    	    int min = INT_MAX;
+    	    
+    	    //i=0, j=3
+    	    for(int k = i; k < j; k++)
     	    {
-    	        int cost_k = cost[i][k] + cost[k+1][j] + d[i-1]*d[k]*d[j];
+    	        int cost_k = cost[i][k] + cost[k+1][j] + d[i]*d[k+1]*d[j+1];
+    	        
     	        if(cost_k < min)
     	        {
-    	            k_taken[i][j] = k;
+    	            k_taken[i][j] = k+1;
     	            min = cost_k;
     	        }
     	    }
-    	    cost[i][j] = min;
+    	    if(min != INT_MAX)
+    	        cost[i][j] = min;
+    	    else
+    	        cost[i][j] = -1;
     	    
     	}
 	}
