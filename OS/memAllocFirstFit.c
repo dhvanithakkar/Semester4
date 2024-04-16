@@ -1,13 +1,5 @@
 #include <stdio.h>
 #include <stdbool.h>
-double sum(int array[]) {
-    double total = 0.0;
-    int length = sizeof(array) / sizeof(array[0]); 
-    for (int i = 0; i < length; i++) {
-        total += array[i];
-    }
-    return total;
-}
 
 void main()//first_fit(int processes[], int num_processes, int memory[], int num_memory) 
 {
