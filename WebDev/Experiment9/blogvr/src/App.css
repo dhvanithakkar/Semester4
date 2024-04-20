@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  text-align: center;
+  background-color: #71cfc6; 
+  margin: 0;
+  padding:0;
+}
+.Title{
+  background-color: #117985;
+  color: white;
+  font-size: x-large;
+  padding:7px;
+  width: 100%;
+}

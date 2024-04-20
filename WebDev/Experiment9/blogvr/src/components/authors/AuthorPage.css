@@ -1,0 +1,60 @@
+.AuthorPage {
+  text-align: center;
+  background-color: #71cfc6; 
+  margin: 0;
+  padding:0;
+  height: 600px;
+  width: 100%;
+  flex: 0 1 auto;
+}
+.authorName{
+    padding: 0;
+    size: 15px;
+}
+.authorBio{
+    padding: 0;
+}
+.h3{
+    padding: 0;
+    margin:0
+}
+h2.authorName{
+    padding: 0;
+    margin:0
+}
+.authorBio{
+    padding-bottom: 30px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    list-style-type: square;
+    text-align: left;
+    margin-left: 20px;
+
+}
+.cardProfile{
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin: 0;
+}
+h3, p{
+    margin:0;
+    }
+h4{
+    display:inline;
+    margin:0;
+    }
+.LikeComment{
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    width: 250px;
+    list-style-type: square;
+    text-align: left;
+
+}
